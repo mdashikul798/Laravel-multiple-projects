@@ -102,7 +102,7 @@ return [
     */
 
     'from' => [
-        'address' => env('MAIL_FROM_ADDRESS', 'rouf79988@gmail.com'),
+        'address' => env('MAIL_FROM_ADDRESS', 'email_address_would_be_here'),
         'name' => env('MAIL_FROM_NAME', 'e-Shoper'),
     ],
 

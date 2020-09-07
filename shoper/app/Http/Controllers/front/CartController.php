@@ -90,7 +90,7 @@ class CartController extends Controller
     }
 
     public function manualStripePay(){
-        Stripe\Stripe::setApiKey('sk_test_51HLLAgFpEXEGCmdN6ZugPdTSMXuHsJn8TB4487Uf39noVZ3gl6mjbRVT82TeCZcNqA0we3F4EFZR6TWZKzhSBdhR00txHtUscE');
+        Stripe\Stripe::setApiKey('stripe_api_key_would_be_here');
         $token = Stripe\Token::create([
             'card' => [
                 'number' => request('card_number'),

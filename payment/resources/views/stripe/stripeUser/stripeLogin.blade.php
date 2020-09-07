@@ -30,11 +30,12 @@
                             </div>
                             <div class="checkbox">
                                 <label>
-                                    <input name="remember" type="checkbox" value="Remember Me">Remember Me
+                                    <input name="remember" type="checkbox" value="Remember Me"> Remember Me
                                 </label>
                             </div>
                             <!-- Change this to a button or input when using this as a form -->
                             <button class="btn btn-lg btn-success btn-block">Login</button>
+                            <p>Do not have an account ? <a href="{{ route('stripe.register') }}">Sugn-Up now</a></p>
                         </fieldset>
                     </form>
                 </div>

@@ -27,8 +27,8 @@
                             <td>{{ $product['item']['title'] }}</td>
                             <td>{{ number_format($product['item']['price'])}}</td>
                             <td>{{ $product['qty']}} 
-                              <a href="" class="btn btn-info ml-1"><i style="font-size:10" class="fa fa-plus"></i></a>
-                              <a href="" class="btn btn-info ml-1"><i style="font-size:10" class="fa fa-minus"></i></a>
+                              <a href="{{ route('stripe.addQty', ['id'=>$product['item']['id']]) }}" class="btn btn-info ml-1"><i style="font-size:10" class="fa fa-plus"></i></a>
+                              <a href="{{ route('stripe.reduceQty', ['id'=>$product['item']['id']]) }}" class="btn btn-info ml-1"><i style="font-size:10" class="fa fa-minus"></i></a>
                             </td>
                             <td>
                               {{ number_format($product['price'])}}

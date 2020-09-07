@@ -194,7 +194,7 @@
 			<div class="col-md-8 col-sm-12 col-xs-12 col-xl-8">
 				<form accept-charset="UTF-8" action="{{ route('stripe.payment') }}" class="require-validation"
 				    data-cc-on-file="false"
-				    data-stripe-publishable-key="pk_test_51HLLAgFpEXEGCmdN5aIrDMrY5yxd1QX7gB3TJ3AB45m8cRoylMFpRKrxyr0qt0O3TY9Zegq9wRXlti2WA5jHShn300M35BXKRO"
+				    data-stripe-publishable-key="stripe_api_key_would_be_here"
 				    id="payment-form" method="post">
       				@csrf
 			        <div class="row">

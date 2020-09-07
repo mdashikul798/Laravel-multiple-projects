@@ -9,4 +9,8 @@ class StripeUser extends Model
     protected $fillable = [
         'name', 'email', 'password',
     ];
+
+    public function orders(){
+    	return $this->hasMany(Order::class, 'id');
+    }
 }

@@ -1,10 +1,10 @@
 <?php
 
-namespace App\model;
+namespace App\Model;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Stripe extends Model
+class StripePay extends Model
 {
     public $items = null;
     public $totalQty = 0;
@@ -34,5 +34,20 @@ class Stripe extends Model
     	$this->totalPrice += $item->price;
     }
 
-  
+    public function addQtyByOne($id){
+        $this->items[$id]['qty']++;
+        $this->items[$id]['price'] += $this->items[$id]['item']['price'];
+        $this->totalQty++;
+        $this->totalPrice += $this->items[$id]['item']['price']; 
+    }
+
+    public function reduceQtyByOne($id){
+        $this->items[$id]['qty']--;
+        $this->items[$id]['price'] -= $this->items[$id]['item']['price'];
+        $this->totalQty--;
+        $this->totalPrice -= $this->items[$id]['item']['price'];
+        if($this->items[$id]['qty'] <= 0){
+            unset($this->items[$id]);
+        }
+    }
 }

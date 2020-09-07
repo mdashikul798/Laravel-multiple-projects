@@ -82,15 +82,30 @@ Route::get('/stripe-home', 'Stripe\StripeController@index')->name('stripe.home')
 
 Route::get('/stripe-login', 'Stripe\UserController@getLogin')->name('stripe.login');
 Route::post('/stripe-login', 'Stripe\UserController@postLogin')->name('stripe.login');
-Route::get('stripe-register', 'Stripe\UserController@userRegister')->name('stripe.register');
-Route::get('stripe-logout', 'Stripe\UserController@stripeLogout')->name('stripe.logout');
-Route::post('stripe-register', 'Stripe\UserController@addUser')->name('stripe.register');
+Route::get('/stripe-register', 'Stripe\UserController@userRegister')->name('stripe.register');
+Route::get('/stripe-logout', 'Stripe\UserController@stripeLogout')->name('stripe.logout');
+Route::post('/stripe-register', 'Stripe\UserController@addUser')->name('stripe.register');
 
 		/*Stripe Payment Route*/
 Route::get('/stripe-user', 'Stripe\StripeController@userProfile')->name('stripe.user.profile');
 Route::get('/add-to-cart/{id}', 'Stripe\StripeController@getAddToCart')->name('product.addToCart');
 Route::get('/stripe-getCart', 'Stripe\StripeController@getCart')->name('stripe.getCart');
+Route::get('/stripe-addQty/{id}', 'Stripe\StripeController@addQty')->name('stripe.addQty');
+Route::get('/stripe-reduceQty/{id}', 'Stripe\StripeController@reduceQty')->name('stripe.reduceQty');
 Route::get('/stripe-checkout', 'Stripe\StripeController@cartCheckout')->name('stripe.checkout');
+Route::post('/stripe-payment', 'Stripe\StripeController@stripePay')->name('stripe.payment');
+
+/*Route::get('/stripe-checkout', [
+	'users' => 'Stripe\StripeController@cartCheckout',
+	'as' => 'stripe.checkout',
+	'middleware' => 'auth'
+] );
+
+Route::post('/stripe-payment', [
+	'users' => 'Stripe\StripeController@stripePay',
+	'as' => 'stripe.payment',
+	'middleware' => 'auth'
+] );*/
 
 /**
  * Paypal-Cart Route
